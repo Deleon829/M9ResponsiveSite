@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Dugout Report</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>The Dugout Report</h1>
+    <nav>
+      <ul>
+        <li><a href="live-stats.html">Live Stats</a></li>
+        <li><a href="teams.html">Teams</a></li>
+        <li><a href="equipment.html">Equipment</a></li>
+      </ul>
+      <button class="subscribe">Subscribe</button>
+    <section class="location-box">
+  <h2>Your Location</h2>
+  <p id="demo">Click the button below to get your location.</p>
+  <button onclick="getLocation()">Get Location</button>
+</section>
+	  </nav>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Top player stats</h2>
+      <ul>
+        <li><strong>Alyssa Brito</strong> (Oklahoma Sooners, Third Base)<br>
+          • Batting Average: .399<br>
+          • Home Runs: 18<br>
+          • Doubles: 16<br>
+          • RBIs: 61<br>
+          • Slugging Percentage: .803</li>
+        <li><strong>Jessica DeLeon</strong> (New Mexico Lobos, Catcher)<br>
+          • Batting Average: .326<br>
+          • Hits: 14<br>
+          • RBIs: 12<br>
+          • Home Runs: 2<br>
+          • Slugging Percentage: .488<br>
+          • Walks: 9</li>
+        <li><strong>Mia Scott</strong> (UT Longhorns, Infielder)<br>
+          • Batting Average: .377<br>
+          • Doubles: 15<br>
+          • Triples: 2<br>
+          • Home Runs: 2<br>
+          • RBIs: 32<br>
+          • Stolen Bases: 19</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Upcoming games/events</h2>
+      <ul>
+        <li><strong>Texas Longhorns vs. Merrimack College</strong><br>
+          • Date: March 8, 2025<br>
+          • Time: 9:30 AM CT<br>
+          • Location: Buckeye Field, Columbus, OH</li>
+        <li><strong>Texas Longhorns vs. Oakland University</strong><br>
+          • Date: March 8, 2025<br>
+          • Time: 2:30 PM CT<br>
+          • Location: Buckeye Field, Columbus, OH</li>
+        <li><strong>New Mexico Lobos vs. San Diego</strong><br>
+          • Date: March 8, 2025<br>
+          • Time: 2:30 PM<br>
+          • Location: Phoenix, AZ<br>
+          • Event: Purple Classic</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Featured News</h2>
+      <p><strong>Missouri Tigers SEC Opener:</strong> Missouri kicks off SEC play against Kentucky after a tough non-conference schedule. Julia Crenshaw leads offensively as the Tigers seek consistency.</p>
+      <p><strong>Big 12 Additions:</strong> Arizona, Arizona State, and Utah have joined the Big 12, enhancing competitive depth.</p>
+      <p><strong>Big Ten Expands:</strong> Oregon, UCLA, and Washington join the Big Ten, marking a significant westward shift.</p>
+      <p><strong>Sonoma State Cuts Athletics:</strong> Sonoma State eliminates Division II athletics due to budget issues, affecting all sports including softball.</p>
+    </section>
+  </main>
+<br>
+<script>
+  const x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+  }
+</script>	
+	</body>
+</html>
